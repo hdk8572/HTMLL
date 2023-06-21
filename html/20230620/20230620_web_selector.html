@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>선택자</title>
     <link href="/reset.css" rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap" rel="stylesheet"> -->
     <style>
+        @font-face {
+            font-family: 'Ostrich';
+            src: local('Ostrich Sans')
+                 ,
+                 url('Resource/fonts/ostrich-sans-bold.ttf') format('truetype')
+                 ,
+                 url('Resource/fonts/ostrich-sans-bold.woff') format('woff')
+                 ;
+        }
+
+        div {
+            /* font-family: 'Orbit', sans-serif, 'Diphylleia', serif;
+            font-size: 28px;
+            font-weight: 800;
+            font-variant: small-caps;
+            font-style: oblique; */
+            font: 800 2em 'Orbit', 'sans-serif', 'Diphylleia', 'serif';
+            line-height: 50px;
+            text-shadow:  5 5 10px #ffff00;
+        }
         /*CSS문법*/
         /* p#id1{background-color: yellow;color: green;}
         p#id2{background-color: red;color: yellow;}
@@ -31,13 +54,45 @@
         div #id2{background-color: red;color: yellow;}
         div #id3{background-color: gray;color: black;} */
 
-        p.ca.cc{background-color: yellow;color: green;}
-        p.ca.cb.cc{background-color: red;color: yellow;}
-        p.cb{background-color: gray;color: black;}
+        p.ca.cc{
+
+            border-width: 5px 10px 2px;
+            border-color: greenyellow blue black;
+            border-style: solid dotted dashed;
+            border-radius: 50px 10px;
+            box-shadow: #f00 0 0 10px, #ccc 0 0 5px inset;
+
+            /* border-width: 5px 10px 5px 2px;
+            border-color: black red blue greenyellow;
+            border-style: solid dashed dotted solid; */
+
+            
+
+            /* border-top: 5px black dashed;
+            border-left: 1px red solid;
+            border-right: 10px blue solid;
+            border-bottom: 5px black solid; */
+
+            display: block;
+            width: 400;
+            padding: 20px 50px;
+            margin: 20px;
+            background-color: rgba(250, 250, 0, .3);color: green;}
+        
+        p.ca.cb.cc{background-color:hsl(360, 70%, 80%);color: yellow;}
+        p.cb{background-color: #ffffff;color: black;}
+
+
     </style>
 </head>
 <body>
     <div>
+        <pre>
+            여기
+            그대로
+                표현
+        </pre>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae obcaecati fuga laboriosam facere eius perspiciatis, dolor, saepe facilis id pariatur animi alias hic? Soluta est expedita sunt dolore natus omnis!</p>
         <p id="id1" class="ca cc">What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         <a>여기 끼워넣기</a>
         <p id="id2" class="ca cb cc">What is Lorem Ipsum? Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
