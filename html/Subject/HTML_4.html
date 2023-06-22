@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset style="display: inline;">
+    <table>
+        <tbody>
+            <div id="ck1">
+            <tr>
+                <td>회원여부 :<input type="radio" id="user" name="check_user">회원
+                <label for="user"></label>
+                <input type="radio" id="Nuser" name="check_user">비회원</td>
+                <label for="Nuser"></label></td>
+            </tr>
+            </div>
+            <div id="ck2">
+            <tr>
+                <td colspan="1">취미(중복선택) :
+                <input type="checkbox" id="book">독서
+                <label for="book"></label>
+                <input type="checkbox" id="movie">영화
+                <label for="movie"></label>
+                <input type="checkbox" id="music">음악
+                <label for="music"></label>
+                <input type="checkbox" id="sport">스포츠
+                <label for="sport"></label></td>
+            </tr>
+            </div>
+            <div id="ck3">
+                <tr>
+                    <td>
+                        <label for="job_list">직업:</label>
+                        <select name="job" id="job_list" size="4">
+                            <option value="student" selected>학생</option>
+                            <option value="worker">회사원</option>
+                            <option value="teacher">교사</option>
+                            <option value="self_job">자영업</option>
+                            <option value="etc">기타</option>
+                        </select>
+                    </td>
+                </tr>
+            </div>
+            <div id="ck4">
+                <tr>
+                    <td><label for="last_comment">남기고 싶은 말 :</label></td>
+                </tr>
+                <tr>
+                    <td colspan="6"><textarea name="comment" id="last_comment" cols="80" rows="8"></textarea></td>
+                </tr>
+                <tr>
+                    <td><input type="reset" value="초기화">
+                        <input type="submit" value="전송"></td>
+                </tr>
+                
+            </div>
+        </tbody>
+    </table>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- [1] 해상도 - 최적해상도 1250px (최대/최소 마지막점검) -->
+    <!-- [2] content 영역 1040px 80vw 90%, 배치(중앙,왼쪽) -->
+    <!-- [3] reset.css 폴더경로 -->
+    <link href="/Resource/CSS/reset.css" rel="stylesheet">
+    <!-- js jQuery -->
+    <!-- [3] project명 또는 core.css 폴더경로 bootstrap, template 등으로 대체 -->
+    <!-- [4] 기본색상 10~15개정도 class 미리 만들어두기 -->
+    <!-- [4] 폰트크기 5~7개정도 class 미리 만들어두기 -->
+    <style>
+        .wrap {
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .wrap.header {
+            background: bisque;
+        }
+        .wrap.content {
+            background: beige;
+        }
+        .wrap.footer {
+            background: bisque;
+        }
+        header, #content, footer {
+            /* 중앙 정렬 방식 (세트방식) */
+            width: 80vw;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+        #content {
+            overflow: hidden;
+        }
+        /* section */
+        section {
+            width: 80%;
+            float:left;
+        }
+        /* aside */
+        aside {
+            width: 20%;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap header">
+        <header>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem enim nihil nobis, aliquid perferendis distinctio ex perspiciatis, ea culpa ullam expedita sint debitis dignissimos alias similique? Molestiae harum perferendis voluptas?</p>
+        </header>
+    </div>
+    <div class="wrap content">
+        <div id="content">
+            <section>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum iure accusantium modi numquam ducimus laboriosam consectetur, praesentium dicta vero, accusamus, repellat alias ipsa nobis? Natus nobis libero quis aut at.</p>
+            </section>
+            <aside>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum iure accusantium modi numquam ducimus laboriosam consectetur, praesentium dicta vero, accusamus, repellat alias ipsa nobis? Natus nobis libero quis aut at.</p>
+            </aside>
+        </div>
+    </div>
+    <div class="wrap footer">
+        <footer>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum iure accusantium modi numquam ducimus laboriosam consectetur, praesentium dicta vero, accusamus, repellat alias ipsa nobis? Natus nobis libero quis aut at.</p>
+        </footer>
+    </div>
+</body>
+</html>

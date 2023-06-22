@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI_디자인5</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* 0. 화면에서 사용되는 공통 (색상, 폰트, ul, table 등의 style 지정) reset.css*/
+        ul {
+            list-style: none;
+        }
+        /* 1. body 자식 layout */
+        /* 2. header 자식 layout */
+        header > div.logo {
+            float: left;
+        }
+        header > div.login {
+            float: right;
+        }
+        /* float 사용 시 부모 태그에 overflow로 계산함 */
+        header {
+            overflow: hidden;
+        }
+        /* 3. nav 자식 layout */
+        nav li {
+            float: left;
+            width: 15%;
+        }
+        /* float 사용 시 부모 태그에 overflow로 계산함 */
+        nav ul {
+            overflow: hidden;
+        }
+        nav li:first-child {
+            margin-left: 5%;
+        }
+        /* 4. section 자식 layout */
+        section {
+            height: 500px;
+            background-color: #999;
+        }
+        nav a {
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        /* 5. footer 자식 layout */
+        footer {
+            height: 50px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 50px;
+        }
+        /* 6. nav 자식 detail */
+        nav a {
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="#" width="100" height="50">
+        </div>
+        <div class="login">
+            <table>
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="password"></td>
+                </tr>
+                <tr>
+                    <input type="submit" value="로그인"><input type="reset" value="취소">
+                </tr>
+            </table>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+            <li><a href="#">메뉴5</a></li>
+            <li><a href="#">메뉴6</a></li>
+        </ul>
+    </nav>
+    <section>
+        
+    </section>
+    <footer>
+        <marquee scrolldelay="2" loop="2" vspace="200">Copyright &#169 1998-2019 KH Information Educational Institute All Right Reserved</marquee>
+    </footer>
+    <!-- <nav>
+        <ul>
+            <li><a href="">메인</a></li>
+            <li><a href="">공지사항</a></li>
+            <li><a href="">자유게시판</a></li>
+            <li><a href="">갤러리</a></li>
+            <li><a href="">회원관리</a></li>
+            <li><a href="">채팅하기</a></li>
+        </ul>
+    </nav> -->
+    
+</body>
+</html>
