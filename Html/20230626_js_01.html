@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var aaa = 10;
+        var bbb = "십이요";
+        ccc = 5.7;
+        ddd = "오쩜칠이지요";
+        
+        console.log(aaa);
+        console.log(typeof(aaa));
+        console.log(bbb);
+        console.log(typeof(bbb));
+        console.log(ccc);
+        console.log(typeof(ccc));
+        console.log(ddd);
+        console.log(typeof(ddd));
+
+        console.log("======= 함수 =======")
+        // java에서 overloading - 매개변수 개수, 자료형이 다를 때
+        // js - 같은 이름의 함수 변수 사용 시 마지막에 대입한 값으로 정의 됨.
+        // 매개변수 개수
+        function sum(a,b) {
+            console.log("sum 1" + a + ", " + b);
+        }
+        function sum(a, b, msg) {
+            console.log("Sum함수 실행 중")
+            // console.log("sum 2" + a + ", " + b + ", " + msg);
+            if(typeof(b) == "function"){
+                b();
+            } else if(typeof(b)=="undefined"){
+                console.log("b가 undefined");
+            }
+            console.log("Sum함수 실행 끝")
+        }
+
+        // var sum = 1000;
+        // Error: Uncaught TypeError: sum is not a function
+        // sum(10, 20);
+        // sum(10, 20, 30);
+        // sum();
+        // sum(10, 20, 30, 40, 50);
+        // sum("문자", function(){console.log("매개인자로보낸익명함수1")}, new Object, 40, 50);
+        // sum("문자", function(){console.log("매개인자로보낸익명함수2")}, new Object, 40, 50);
+        // console.log("=============")
+        // sum("문자", abc2, new Object(), 40, 50);      // abc2는 function 형태
+        // console.log("=============")
+        // sum("문자", abc2(), new Object(), 40, 50);    // abc2()를 실행한 결과값 형태
+        // console.log("=============")
+
+
+
+        console.log("======객체 Object======")
+        var obj2 = new Object();
+        obj2.k1 = 100;
+
+        var obj1 = {
+            k1 : 10,
+            k2 : "안녕",
+            k3 : function(){
+                console.log("obj1의 k3키에 해당하는 함수임");
+            },
+            k4 : 20
+            // 더 추가
+        };
+        obj1.k1 = 1000;
+        obj1["k1"] = 2000;
+        obj1.k3();
+        obj1["k3"]();
+        // obj1.k2();
+
+        //  k5 : 100
+        //  k6 : function(){console.log("obj1의 k6키에 해당하는 함수임.");}
+        obj1.k5 = 100;
+        console.log(obj1);
+        obj1.k6 = function(){console.log("obj1의 k6키에 해당하는 함수임.");}
+        obj1["k7"] = function(){console.log("obj1의 k6키에 해당하는 함수임.");}
+        console.log(obj1);
+        // 접근한 key=필드=속성=멤버변수 명이 기존에 존재하면 값교체, 기존 없었다면 추가
+        console.log(obj1.k10);
+        // 삭제
+        delete(obj1.k6);
+        delete(obj1["k6"]);
+        console.log(obj1);
+
+        console.log("======= 함수 =======");
+        function func2(nickname, title, content) {
+            var obj3 = new Object();
+            obj3.k1 = nickname;
+            obj3.k2 = title;
+            obj3.k3 = content;
+            obj3.k4 = function(){console.log("obj3의 함수 k2")}
+            // return ; 이 암묵적으로 기입되어 있음, 결론은 undefined 출력
+            return obj3;
+        }
+        console.log(func2("홍길동","게시글제목남김", "날씨 좋네"));
+        var nana = func2("나나","나나나", "날씨 좋네");
+        nana.k4();
+
+        console.log("======배열2======")
+        var arr1 = [10, 20];
+        arr1[2] = nana;
+        arr1[3] = {
+            k1 : 10,
+            k2 : "안녕"
+        };
+        console.log(arr1);
+        var obj4 = {
+            k1 : 10,
+            k2 : arr1
+        };
+        console.log(obj4);
+
+        // <button onclick = "함수명();">버튼</button>
+
+
+    </script>
+</body>
+</html>
