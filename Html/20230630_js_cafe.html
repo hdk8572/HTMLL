@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카페 포스기</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <link href="" rel="stylesheet">
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+    <script>
+        $(loadedHandler);
+        function loadedHandler() {
+            $('.c').on("blur", cntBlurHandler);
+            $("[type=button]").on("click", calcClickHandler);
+        }
+        // 각종 기능 함수들
+        function cntBlurHandler(event){
+            // console.log(event);
+            // console.log($(this).parent().prev().text())
+            console.log($(this).val());
+            $(this).parent().next().children('input.p').val(
+                $(this).parent().prev().text()
+                *
+                $(this).val()
+            );
+            // var price = $(this).parent().prev().text() * $(this).val();
+            var sum = 0;
+            // 합계
+            $(".c").each(function (idx, item){
+                console.log(item);
+                if(idx != ($(".c").length-1)){
+                    var i = Number($(item).val());
+                    if(isNaN(i)){
+                        i = 0;
+                    }
+                    sum += i;
+                }
+            });
+            console.log(sum);
+            $("#cTotalCnt").val(sum);
+
+            var sum = 0;
+            // 합계
+            $(".p").each(function (idx, item){
+                console.log(item);
+                if(idx != ($(".p").length-1)){
+                    var i = $(item).val() * 1;
+                    if(isNaN(i)){
+                        i = 0;
+                    }
+                    sum += i;
+                }
+            });
+            $("#cTotalPrice").val(sum);
+
+        }
+        function calcClickHandler(event){
+            console.log(this);
+            console.log(event.target);
+            console.log(event);
+            // 각자 실습
+
+            $(".c.in").each(function(idx, item){
+                this = item
+                console.log(item);
+                $(item).parent().next().children('input.p').val(
+                    $(item).parent().prev().text()
+                    *
+                    $(item).val()
+                );
+            });
+        }
+        // each 경우 event handler 처럼 함수형태 만들어서 사용하지 않음 - 권장
+        // var globalValueSum = 0;
+        // function cTotalCntHandler(idx) {
+        //     // item = this
+        //     console.log(this);
+        //     // sum += $(this).val();
+        //     globalValueSum += $(this).val();
+        // }
+
+
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>메뉴</th>
+            <th>가격</th>
+            <th>수량</th>
+            <th>합계</th>
+        </tr>
+        <tr>
+            <td>아메리카노</td>
+            <td>2500</td>
+            <td><input type="text" name="c1" id="c1" class="c in"></td>
+            <td><input type="text" name="c1price" id="c1price" class="p"></td>
+        </tr>
+        <tr>
+            <td>라떼</td>
+            <td>3000</td>
+            <td><input type="text" name="c2" id="c2" class="c in"></td>
+            <td><input type="text" name="c2price" id="c2price" class="p"></td>
+        </tr>
+        <tr>
+            <td>생강라뗴</td>
+            <td>4500</td>
+            <td><input type="text" name="c3" id="c3" class="c in"></td>
+            <td><input type="text" name="c3price" id="c3price" class="p"></td>
+        </tr>
+        <tr>
+            <td>합계</td>
+            <td></td>
+            <td><input type="text" name="cTotalCnt" id="cTotalCnt" class="c" readonly></td>
+            <td><input type="text" name="cTotalPrice" id="cTotalPrice" class="p" readonly></td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <input type="button" value="계산하기">
+                <input type="reset">
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
