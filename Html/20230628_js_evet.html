@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="resources/css/reset.css" rel="stylesheet">
+</head>
+<body>
+    <button type="button" onclick="console.log('안녕'); console.log('안녕2'); alert('경고!');">버튼1</button>
+    <button type="button" id="btn_1">버튼 2</button>
+    <!-- HTML onclick 속성 js onclick 속성과 차이가 있음. this 다름.-->
+    <button type="button" onclick="btn2ClickHandler();">버튼 3</button>
+    <button type="button" id="btn_2">버튼 4</button>
+    <button type="button" id="btn_3">버튼 5</button>
+    <button type="button" id="btn_4">버튼 6</button>
+    <script>
+        // js onclick 속성 차이
+        var btn1 = document.getElementById("btn_1");
+        console.log(btn1);
+        console.log(typeof(btn1));
+        btn1.onclick = function(){
+            console.log('안녕');
+            console.log('안녕2');
+            alert('경고!');
+        };
+
+        // 간단 작성 (익명함수) 
+        document.getElementById("btn_1").onclick = function(){
+            console.log('안녕');
+            console.log('안녕2');
+            // alert('경고!');
+            document.getElementById("btn_1").onclick = null;    // 1번 방법.
+            this.onclick = null;                                // 2번 방법.
+            console.log(this);
+            // this = click 되어 콜백함수가 호출된 시점에 element객체.
+            // 한번만 클릭이벤트 실행하고 싶을 때 방법.
+        };
+        
+        // 함수를 만들어서 작성
+        function btn2ClickHandler(){
+            console.log('안녕');
+            console.log('안녕2');
+            // alert('경고!');
+            console.log(this); //   HTML onclic 호출되면 this = window 객체, js onclick 호출되면 this = 클릭된 elements 객체
+            return;
+        };
+
+        // 함수명 활용
+        document.getElementById("btn_2").onclick = btn2ClickHandler;
+        // js가 btn_1 버튼이 클릭되면 ()을 붙여서 호출해줌.
+        // 아래처럼 작성하면 안됨.
+        // document.getElementById("btn_1").onclick = btn1ClickHandler(); //   undefined 결과값을 onclick에 대입.
+
+        document.getElementById("btn-3").addEventListener("click", btn2ClickHandler);
+        document.getElementById("btn-4").addEventListener("click", function()){
+            console.log("btn-4 클릭");
+            console.log(this);
+        }
+    </script>
+</body>
+</html>
