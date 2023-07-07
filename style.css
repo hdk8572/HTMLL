@@ -1,0 +1,68 @@
+@import "reset.css";
+
+.wrap {
+    background-color: rgb(221, 220, 220);
+    width: 340px;
+    height: 400px ;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.wrap form {
+    width: 320px;
+    height: 350px;
+    /* overflow: hidden; */
+}
+.wrap table {
+    margin: 0 auto;
+    height: 250px;
+    margin-top: 30px;
+}
+.wrap table tr {
+    height: 20px;
+}
+.wrap table td {
+    /* height: 30px; */
+    width: 200px;
+    
+}
+.wrap table th {
+    /* height: 30px; */
+    width: 100px;
+    text-align: left;
+    
+}
+
+
+.wrap [type=text],[type=password],[type=email] {
+    border: transparent;
+    border-bottom: 2px dashed black;
+    background-color: transparent;
+    width: 200px;
+    height: 30px;
+    
+}
+
+.btn_join {
+    width: 300px;
+}
+.btn_join button {
+    width: 320px;
+    height: 40px;
+    border: transparent;
+    background-color: rgba(50, 206, 83, 0.336);
+    margin-top: 40px;
+}
+
+.hint {
+    height: 30px;
+    line-height: 30px;
+    font-size: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: gray;
+    visibility: hidden;
+}
