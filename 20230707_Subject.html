@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script>
+    window.onload = loadedHandler;
+
+    function loadedHandler() {
+        $("[type=text]").on("click", inputClickHandler);
+        $("[type=password]").on("click", inputClickHandler);
+    }
+
+    function inputClickHandler(event) {
+        // console.log($(this));
+        // console.log($($hintElement));
+        $(".hint").css("visibility", "hidden");
+        var $hintElement = $(this).parent().parent().next();
+        $hintElement.css("visibility", "visible");
+    }
+</script>
+</head>
+<body>
+    <div class="wrap">
+        <form>
+            <table>
+                <tr>
+                    <th>아이디</th>
+                    <td><input type="text" name="mid" required></td>
+                </tr>
+                <tr>
+                    <th>패스워드</th>
+                    <td><input type="password" name="mpwd" required></td>
+                </tr>
+                <tr class="hint">
+					<th></th>
+					<td>영문자 대/소문자 특수문자, 숫자 포함 8~32자</td>
+				</tr>
+                <tr>
+                    <th>패스워드확인</th>
+                    <th><input type="password" name="c_mpwd" required></td>
+                </tr>
+                <tr>
+                    <th>이메일</th>
+                    <th><input type="email" name="memail" style="width: 85px;"><span style="font-size: 14px;">@</span>
+                        <input type="email" name="memail" style="width: 85px;"></td>
+                </tr>
+                <tr>
+                    <th>주소</th>
+                    <th><input type="text" name="maddress">
+                        <input type="text" name="maddress"></td>
+                </tr>
+            </table>
+            <div class="btn_join">
+                <button>가입하기</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
